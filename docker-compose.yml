@@ -1,1 +1,18 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+
+  blockchain:
+    build: ./blockchain_microservice
+    ports:
+      - "3001:3001"
+
+  ai_models:
+    build: ./ai_models  # (if served later as FastAPI)
 
